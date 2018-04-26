@@ -123,7 +123,6 @@ public class AmazonMain extends CommonAPIChrome{
         chromeDriver.get(url);
         chromeDriver.findElement(By.xpath("//select[@aria-describedby='searchDropdownDescription']")).click();
     }
-
     //test18
     public void mainCategoriesAlexa(){
         mainCategoriesdrop();
