@@ -1,5 +1,6 @@
 package amazonTests;
 
+import amazonMain.AmazonMain;
 import commonAPI.CommonAPIChrome;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -7,103 +8,94 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
-public class Amazon extends CommonAPIChrome {
-
-    String url = "https://www.amazon.com";
+public class Amazon extends AmazonMain {
 
     @Test //test1
     public void amazonBrowserLaunch(){
-        chromeDriver.get(url);
+        mainAmazonBrowserLaunch();
     }
-
     @Test //test2
     public void amazonLogin(){
-        chromeDriver.get(url);
-        chromeDriver.findElement(By.xpath("//div[@id='nav-tools']//a[@class='nav-a nav-a-2']")).click();
-        chromeDriver.findElement(By.xpath("//input[@id='ap_email']")).sendKeys("test@email.com");
-        chromeDriver.findElement(By.xpath("//div[@class='a-section']//input[@id='continue']")).click();
-        chromeDriver.findElement(By.xpath("//input[@id='ap_password']")).sendKeys("abcd1234");
-        chromeDriver.findElement(By.xpath("//input[@id='signInSubmit']")).click();
+        mainAmazonLogin();
     }
-
     @Test //test3
     public void findSearchbar(){
-        chromeDriver.get(url);
-        chromeDriver.findElement(By.id("twotabsearchtextbox"));
+        mainFindSearchbar();
     }
-
     @Test //test4
     public void searchForItems(){
-        chromeDriver.get(url);
-        chromeDriver.findElement(By.id("twotabsearchtextbox")).sendKeys("ps4 games", Keys.ENTER);
+        mainSearchForItems();
     }
-
     @Test //test5
     public void searchGoBack(){
-        chromeDriver.get(url);
-        chromeDriver.findElement(By.id("twotabsearchtextbox")).sendKeys("ps4 games", Keys.ENTER);
-        chromeDriver.navigate().back();
+        mainSearchGoBack();
     }
-
     @Test //test6
     public void searchGoBackAndRefresh(){
-        chromeDriver.get(url);
-        chromeDriver.findElement(By.id("twotabsearchtextbox")).sendKeys("ps4 games", Keys.ENTER);
-        chromeDriver.navigate().back();
-        chromeDriver.navigate().refresh();
+        mainSearchGoBackAndRefresh();
     }
-
     @Test //test7
     public void searchGoBackGoForward(){
-        chromeDriver.get(url);
-        chromeDriver.findElement(By.id("twotabsearchtextbox")).sendKeys("ps4 games", Keys.ENTER);
-        chromeDriver.navigate().back();
-        chromeDriver.navigate().forward();
-        chromeDriver.navigate().refresh();
+        mainSearchGoBackGoForward();
     }
-
     @Test //test8
     public void searchGoBackGoForwardClearSearch(){
-        chromeDriver.get(url);
-        chromeDriver.findElement(By.id("twotabsearchtextbox")).sendKeys("ps4 games", Keys.ENTER);
-        chromeDriver.navigate().back();
-        chromeDriver.navigate().forward();
-        chromeDriver.navigate().refresh();
-        chromeDriver.findElement(By.id("twotabsearchtextbox")).clear();
+        mainSearchGoBackGoForwardClearSearch();
     }
-
     @Test //test9
     public void searchForItemsGoBackAndSearchMore(){
-        chromeDriver.get(url);
-        chromeDriver.findElement(By.id("twotabsearchtextbox")).sendKeys("ps4 games", Keys.ENTER);
-        chromeDriver.navigate().back();
-        chromeDriver.findElement(By.id("twotabsearchtextbox")).sendKeys("MacAir", Keys.ENTER);
-        chromeDriver.navigate().back();
+        mainSearchForItemsGoBackAndSearchMore();
     }
-
     @Test //test10
-    public void searchGoBackGoForwardClearSearchAndSearchForMoreItems() {
-        chromeDriver.get(url);
-        chromeDriver.findElement(By.id("twotabsearchtextbox")).sendKeys("ps4 games", Keys.ENTER);
-        chromeDriver.navigate().back();
-        chromeDriver.navigate().forward();
-        chromeDriver.navigate().refresh();
-        chromeDriver.findElement(By.id("twotabsearchtextbox")).clear();
-        chromeDriver.findElement(By.id("twotabsearchtextbox")).sendKeys("Cuff Links", Keys.ENTER);
+    public void searchGoBackGoForwardClearSearchAndSearchForMoreItems(){
+        mainSearchGoBackGoForwardClearSearchAndSearchForMoreItems();
     }
-
     @Test //test11
     public void amazonBrowserClose(){
-        chromeDriver.get(url);
-        chromeDriver.close();
+        mainAmazonBrowserClose();
     }
-
     @Test //test12
     public void amzonBrowserTitle(){
-        chromeDriver.get(url);
-        System.out.println(chromeDriver.getCurrentUrl());
-        System.out.println(chromeDriver.getTitle());
-        chromeDriver.close();
+        mainAmzonBrowserTitle();
     }
-    
+    @Test //test13
+    public void categories(){
+        mainCategories();
+    }
+    @Test //test14
+    public void deliverTo(){
+        mainDeliverTo();
+    }
+    @Test //test15
+    public void clickDone(){
+        mainClickDone();
+    }
+    @Test //test16
+    public void clickDepartment(){
+        mainClickDepartment();
+    }
+    @Test //test17
+    public void categoriesDrop(){
+        mainCategoriesdrop();
+    }
+    @Test //test18
+    public void categoriesAlexa(){
+        mainCategoriesAlexa();
+    }
+    @Test //test19
+    public void categoriesVideogames(){
+        mainCategoriesVideogames();
+    }
+    @Test //test20
+    public void godOfWar(){
+        mainGodOfWar();
+    }
+    @Test //test21
+    public void addGOWToCart(){
+        mainAddGOWToCart();
+    }
+    @Test //test22
+    public void continueoCart(){
+        mainContinueToCart();
+    }
 }
