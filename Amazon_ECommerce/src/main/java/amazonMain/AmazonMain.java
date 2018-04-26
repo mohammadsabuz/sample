@@ -153,7 +153,7 @@ public class AmazonMain extends CommonAPIChrome{
         chromeDriver.findElement(By.xpath("//span[@id='smartShelfAddToCartContinue']//input[@name='submit.addToCart']")).click();
     }
     //test23
-    
+
     //test24
 
     //test25
