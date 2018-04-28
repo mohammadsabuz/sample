@@ -8,15 +8,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class CommonAPIChrome {
-
     public WebDriver chromeDriver;
-
     public static void sleep() {
         try {
             Thread.sleep(2000);
@@ -24,9 +21,7 @@ public class CommonAPIChrome {
             e.printStackTrace();
         }
     }
-
     @BeforeMethod
-
     public void before() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\moham\\IdeaProjects\\AutomationTeam6\\driver\\chromedriver.exe");
 /*
@@ -36,10 +31,8 @@ public class CommonAPIChrome {
         sleep();
         */
     }
-
 /* This is the starting point of the screenshot code ...
     Capture Screenshots of Web pages -- This will be applied for all text cases, check CommonAPI */
-
     // Screenshot Capturing
     public static String randomFileName(int length){
         StringBuilder stringBuilder = new StringBuilder();

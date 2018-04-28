@@ -4,13 +4,10 @@ import commonAPI.CommonAPIChrome;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-
 import java.util.List;
 
 public class AmazonMain extends CommonAPIChrome{
-
     String url = "https://www.amazon.com";
-
     //test1 Browser
     public void mainAmazonBrowserLaunch(){
         chromeDriver.get(url);
