@@ -26,10 +26,15 @@ public class CommonAPIChrome {
     }
 
     @BeforeMethod
+
     public void before() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\moham\\IdeaProjects\\AutomationTeam6\\driver\\chromedriver.exe");
+/*
+    public void before(){
+        System.setProperty("webdriver.chrome.driver", "/Users/shafiq/IdeaProjects/AutomationTeam6/driver/driver_Mac/chromedriver");
         chromeDriver = new ChromeDriver();
         sleep();
+        */
     }
 
 /* This is the starting point of the screenshot code ...
@@ -54,7 +59,6 @@ public class CommonAPIChrome {
         FileUtils.copyFile(sourceFile, new File(directory + fileName));
 /* This is the end of the screenshot capture code
     Capture Screenshots of Web pages -- This will be applied for all text cases, check CommonAPI */
-
         chromeDriver.close();
     }
 }
